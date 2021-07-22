@@ -2,33 +2,13 @@ pandas
 streamlit
 matplotlib.pyplot
 numpy
-plotly.express
-from functools import reduce
-from sklearn.model_selection import train_test_split
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.preprocessing import StandardScaler
-from sklearn.neighbors import KNeighborsRegressor
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeRegressor
-from sklearn.model_selection import GridSearchCV
-from sklearn.model_selection import RandomizedSearchCV
-from sklearn.linear_model import LinearRegression, Lasso, LassoLarsCV
-from sklearn import linear_model
-from traitlets.traitlets import default
-from xgboost import XGBRegressor
-from sklearn import ensemble
-from sklearn import metrics
-import plotly.graph_objects as go
-import collections
-from pandas.api.types import CategoricalDtype
-from datetime import datetime, date, time
-import regex as re
-from plotly.subplots import make_subplots
-import string
-import nltk
-from nltk.corpus import stopwords
-import PIL.Image
-from PIL import Image
-import requests
-import streamlit.components.v1 as components
+streamlit
+pandas
+numpy
+plotly
+sklearn
+altair
+requests
+pydeck
+linkpreview
+sklearn
