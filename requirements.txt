@@ -13,3 +13,7 @@ pydeck
 linkpreview
 sklearn
 seaborn
+xgboost
+regex
+nltk
+string
