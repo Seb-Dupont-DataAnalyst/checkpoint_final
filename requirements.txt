@@ -12,3 +12,4 @@ requests
 pydeck
 linkpreview
 sklearn
+seaborn
