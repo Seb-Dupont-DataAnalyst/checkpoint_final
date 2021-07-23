@@ -723,7 +723,7 @@ if choice == 'Descriptions' :
     fig = px.bar(df.groupby(['millésime']).mean()[['desc_len']].reset_index(), x='millésime', y='desc_len', color='millésime', text = 'desc_len')
     fig.update_xaxes(title='Millésimes', range=[1990, 2022])
     fig.update_layout(title='<b>Evolution de la longueur des descriptions</b>',
-                      title_x=0.5, title_font_family="Verdana", title_font_color = 'white', showlegend=False)
+                      title_x=0.5, title_font_family="Verdana", title_font_color = 'black', showlegend=False)
     fig.layout.coloraxis.showscale = False
     fig.update_layout(xaxis_title="Millésimes",
                       yaxis_title="Nb mots", showlegend=False)
