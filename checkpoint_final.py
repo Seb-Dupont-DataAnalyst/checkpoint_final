@@ -976,7 +976,7 @@ if choice == 'Pricing via Machine Learning' :
             fig.update_layout({'plot_bgcolor': 'rgba(255,255,255,255)',
                                         'paper_bgcolor': 'rgba(255,255,255,255)', })
             fig.update_traces(texttemplate='%{text:.3s}', textposition='outside')
-            fig.update_xaxes(title='Prix')
+            fig.update_xaxes(title='Prix', tick_prefix = '$')
             fig.update_yaxes(title='Vins')
             st.plotly_chart(fig, use_container_width=True)    
 
