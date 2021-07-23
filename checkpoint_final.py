@@ -975,7 +975,7 @@ if choice == 'Pricing via Machine Learning' :
                         title_x=0.5, title_font_family="Verdana", showlegend=False)  
             fig.update_layout({'plot_bgcolor': 'rgba(255,255,255,255)',
                                         'paper_bgcolor': 'rgba(255,255,255,255)', })
-            fig.update_traces(texttemplate='&#36;'%{text:.3s}', textposition='outside')
+            fig.update_traces(texttemplate='&#36;'{text:.3s}', textposition='outside')
             fig.update_xaxes(title='Prix')
             fig.update_yaxes(title='Vins')
             fig.update_layout(xaxis_tickprefix = '$')
