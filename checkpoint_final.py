@@ -41,7 +41,7 @@ st.set_page_config(page_title="Domaine des Croix",
                    )
 
 link = "https://github.com/murpi/wilddata/raw/master/wine.zip"
-df = pd.read_csv(r"C:\Users\dupon\Downloads\df.csv")
+df = pd.read_csv(r"https://raw.githubusercontent.com/Seb-Dupont-DataAnalyst/checkpoint_final/main/df.csv")
 
 link2 = "https://github.com/murpi/wilddata/raw/master/domaine_des_croix.csv"
 df_domaine = pd.read_csv(link2)
