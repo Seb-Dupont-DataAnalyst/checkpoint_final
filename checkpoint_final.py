@@ -143,14 +143,14 @@ if choice == 'Analyse du marché':
 
     trace1 = go.Box(
         y=df['points'],
-        name='notes',
+        name='Notes',
         marker=dict(
             color='royalblue'
         )
     )
     trace2 = go.Box(
         y=df['price'],
-        name='prix',
+        name='Prix',
         marker=dict(
             color='#FF851B'
         ),
@@ -159,12 +159,12 @@ if choice == 'Analyse du marché':
     data = [trace1, trace2]
     layout = go.Layout(
         yaxis=go.layout.YAxis(
-            title='notes',
+            title='Notes',
             zeroline=False
         ),
         yaxis2=go.layout.YAxis(
             side='right',
-            title='prix',
+            title='Prix',
             overlaying='y',
             range=[0, 100],
             zeroline=False),
