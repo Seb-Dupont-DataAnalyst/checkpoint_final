@@ -1007,9 +1007,9 @@ if choice == 'Pricing via Machine Learning' :
                                     'paper_bgcolor': 'rgba(255,255,255,255)', })
                 st.plotly_chart(fig, use_container_width=True)
 
-        choix_hypothese = st.selectbox('Sélectionner une hypothèse de pricing',['Hypothèse basse', 'Hypothèse intermédiaire', 'Hypothèse haute'])
+        choix_hypothese = st.selectbox('Sélectionner une hypothèse de pricing',['Hypothèse 1', 'Hypothèse intermédiaire', 'Hypothèse 2'])
 
-        if choix_hypothese == 'Hypothèse basse':
+        if choix_hypothese == 'Hypothèse 1':
             fig = px.bar(df_domaine, x='price', y='title',orientation='h', color = 'title', text='price')
             fig.update_layout(yaxis={'categoryorder': 'total ascending'}, title='<b>Pricing des différents vins</b>',
                         title_x=0.5, title_font_family="Verdana", showlegend=False)  
@@ -1021,7 +1021,7 @@ if choice == 'Pricing via Machine Learning' :
             fig.update_layout(xaxis_tickprefix = '$')
             st.plotly_chart(fig, use_container_width=True)    
 
-        if choix_hypothese == 'Hypothèse haute':
+        if choix_hypothese == 'Hypothèse 2':
             fig = px.bar(df_domaine, x='price 2', y='title',orientation='h', color = 'title', text='price 2')
             fig.update_layout(yaxis={'categoryorder': 'total ascending'}, title='<b>Pricing des différents vins</b>',
                         title_x=0.5, title_font_family="Verdana", showlegend=False)  
