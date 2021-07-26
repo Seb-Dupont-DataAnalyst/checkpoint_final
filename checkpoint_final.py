@@ -472,6 +472,9 @@ if choice == 'Zoom':
             bgcolor='#4ac8a4',
             opacity=0.8
             )
+        
+        fig.add_annotation(x=1.17, y=df_cepage['price'].median(), yref="y2",text=df_cepage['price'].median(),showarrow=False, font=dict(color="white", size=14))
+        fig.add_annotation(x=-0.17, y=df_cepage['points'].median(), yref="y",text=df_cepage['points'].median(),showarrow=False, font=dict(color="white", size=14))
         fig.update_layout(title='<b>Comparaison : ' + choix_cepage + ' vs autres</b>',
                             title_x=0.5, title_font_family="Verdana")
         st.plotly_chart(fig, use_container_width=True)
