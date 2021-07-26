@@ -155,14 +155,14 @@ if choice == 'Analyse du marché':
         y=df['points'],
         name='Notes',
         marker=dict(
-            color='royalblue'
+            color='purple'
         )
     )
     trace2 = go.Box(
         y=df['price'],
         name='Prix',
         marker=dict(
-            color='#FF851B'
+            color='#e377c2'
         ),
         yaxis='y2'
     )
@@ -202,7 +202,7 @@ if choice == 'Analyse du marché':
                        'paper_bgcolor': 'rgba(255,255,255,255)', })
     fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
 
-    st.plotly_chart(fig, use_container_width=True)
+    #st.plotly_chart(fig, use_container_width=True)
 
 
 
@@ -388,7 +388,7 @@ if choice == 'Zoom':
         y=df_cepage['points'],
         name=choix_cepage +' ',
         marker=dict(
-            color='royalblue'
+            color='purple'
         )
         )
 
@@ -396,7 +396,7 @@ if choice == 'Zoom':
         y=df_hors_Pinot['points'],
         name='Autres',
         marker=dict(
-            color='cyan'
+            color='#9467bd'
         )
         )
 
@@ -404,7 +404,7 @@ if choice == 'Zoom':
         y=df_cepage['price'],
         name= choix_cepage,
         marker=dict(
-            color='royalblue'
+            color='#e377c2'
         ),
         yaxis='y2'
 
@@ -414,7 +414,7 @@ if choice == 'Zoom':
         y=df_hors_Pinot['price'],
         name='Autres ',
         marker=dict(
-            color='cyan'
+            color='pink'
         ),
         yaxis='y2'
         )
@@ -486,9 +486,9 @@ if choice == 'Zoom':
             opacity=0.8
             )
         
-        fig.add_annotation(x=2.1, y=df_cepage['price'].median(), yref="y2",text=df_cepage['price'].median(),showarrow=False, font=dict(color="white", size=14))
+        fig.add_annotation(x=2.1, y=df_cepage['price'].median(), yref="y2",text=df_cepage['price'].median(),showarrow=False, font=dict(color="black", size=14))
         fig.add_annotation(x=-0.25, y=df_cepage['points'].median(), yref="y",text=df_cepage['points'].median(),showarrow=False, font=dict(color="white", size=14))
-        fig.add_annotation(x=3.27, y=df_hors_Pinot['price'].median(), yref="y2",text=df_hors_Pinot['price'].median(),showarrow=False, font=dict(color="white", size=14))
+        fig.add_annotation(x=3.27, y=df_hors_Pinot['price'].median(), yref="y2",text=df_hors_Pinot['price'].median(),showarrow=False, font=dict(color="black", size=14))
         fig.add_annotation(x=0.92, y=df_hors_Pinot['points'].median(), yref="y",text=df_hors_Pinot['points'].median(),showarrow=False, font=dict(color="white", size=14))
         fig.update_layout(title='<b>Comparaison : ' + choix_cepage + ' vs autres</b>',
                             title_x=0.5, title_font_family="Verdana")
@@ -533,12 +533,26 @@ if choice == 'Zoom':
         df_province = df[df['province'] == choix_province]
         df_hors_province = df[df['province'] != choix_province]
 
-        
+
+      
+        fig = px.bar(y=df_province.groupby(['variety']).count()[['points']].reset_index()['variety'], x=df_province.groupby(['variety']).count()[['points']].reset_index()['points'], 
+        color = df_province.groupby(['variety']).count()[['points']].reset_index()['variety'], orientation='h', text=df_province.groupby(['variety']).count()[['points']].reset_index()['points'])
+        fig.update_layout(yaxis={'categoryorder': 'total ascending'})
+        fig.update_layout({'plot_bgcolor': 'rgba(255,255,255,255)',
+                            'paper_bgcolor': 'rgba(255,255,255,255)', })
+        fig.update_xaxes(title='Nombre de vins')
+        fig.update_yaxes(title='Cépages')
+        fig.update_layout(showlegend = False)
+        fig.update_traces(texttemplate='%{text:.2s}', textposition='outside')
+
+        st.plotly_chart(fig, use_container_width=True)
+
+
         trace1 = go.Box(
         y=df_province['points'],
         name=choix_province +' ',
         marker=dict(
-            color='royalblue'
+            color='purple'
         )
         )
 
@@ -546,7 +560,7 @@ if choice == 'Zoom':
         y=df_hors_province['points'],
         name='Autres',
         marker=dict(
-            color='cyan'
+            color='#9467bd'
         )
         )
 
@@ -554,7 +568,7 @@ if choice == 'Zoom':
         y=df_province['price'],
         name= choix_province,
         marker=dict(
-            color='royalblue'
+            color='#e377c2'
         ),
         yaxis='y2'
 
@@ -564,7 +578,7 @@ if choice == 'Zoom':
         y=df_hors_province['price'],
         name='Autres ',
         marker=dict(
-            color='cyan'
+            color='pink'
         ),
         yaxis='y2'
         )
@@ -635,9 +649,9 @@ if choice == 'Zoom':
             bgcolor='#4ac8a4',
             opacity=0.8
             )
-        fig.add_annotation(x=2.1, y=df_province['price'].median(), yref="y2",text=df_province['price'].median(),showarrow=False, font=dict(color="white", size=14))
+        fig.add_annotation(x=2.1, y=df_province['price'].median(), yref="y2",text=df_province['price'].median(),showarrow=False, font=dict(color="black", size=14))
         fig.add_annotation(x=-0.25, y=df_province['points'].median(), yref="y",text=df_province['points'].median(),showarrow=False, font=dict(color="white", size=14))
-        fig.add_annotation(x=3.27, y=df_hors_province['price'].median(), yref="y2",text=df_hors_province['price'].median(),showarrow=False, font=dict(color="white", size=14))
+        fig.add_annotation(x=3.27, y=df_hors_province['price'].median(), yref="y2",text=df_hors_province['price'].median(),showarrow=False, font=dict(color="black", size=14))
         fig.add_annotation(x=0.92, y=df_hors_province['points'].median(), yref="y",text=df_hors_province['points'].median(),showarrow=False, font=dict(color="white", size=14))
         fig.update_layout(title='<b>Comparaison : ' + choix_province + ' vs autres</b>',
                             title_x=0.5, title_font_family="Verdana")
@@ -1030,6 +1044,4 @@ if choice == 'Pricing via Machine Learning' :
             fig.update_yaxes(title='Vins')
             fig.update_layout(xaxis_tickprefix = '$')
             st.plotly_chart(fig, use_container_width=True) 
-            
-
         
