@@ -931,7 +931,7 @@ if choice == 'Pricing via Machine Learning' :
             layout = go.Layout(
             yaxis=go.layout.YAxis(
                     side='left',
-                    title='prix',
+                    title='Prix',
                     overlaying='y',
                     range=[0, 200],
                     zeroline=False),
@@ -942,9 +942,14 @@ if choice == 'Pricing via Machine Learning' :
             fig.update_layout(showlegend = False)
             fig.update_layout({'plot_bgcolor': 'rgba(255,255,255,255)',
                                 'paper_bgcolor': 'rgba(255,255,255,255)', })
-            st.plotly_chart(fig, use_container_width=True)
+            
 
-        
+            fig.add_annotation(x=2, y=df_domaine['price 2'].median(), yref="y",text=df_domaine['price 2'].median().round(),showarrow=False, font=dict(color="black", size=14))
+            fig.add_annotation(x=-0.27, y=df_domaine['price'].median(), yref="y",text=df_domaine['price'].median().round(),showarrow=False, font=dict(color="black", size=14))
+            fig.add_annotation(x=3.14, y=box_cepage_france['price'].median(), yref="y",text=box_cepage_france['price'].median().round(),showarrow=False, font=dict(color="black", size=14))
+            fig.add_annotation(x=0.85, y=df_domaine['price 3'].median(), yref="y",text=df_domaine['price 3'].median().round(),showarrow=False, font=dict(color="black", size=14))
+            fig.add_annotation(x=4.3, y=box_cepage['price'].median(), yref="y",text=box_cepage['price'].median().round(),showarrow=False, font=dict(color="black", size=14))
+            st.plotly_chart(fig, use_container_width=True)
             
         if choix_province != 'Tous': 
                 box_cepage = df[(df['variety'] == choix_cepage) & (df['points'] > 90) & (df['province'] == choix_province)]
@@ -994,7 +999,7 @@ if choice == 'Pricing via Machine Learning' :
                 layout = go.Layout(
                 yaxis=go.layout.YAxis(
                         side='left',
-                        title='prix',
+                        title='Prix',
                         overlaying='y',
                         range=[0, 320],
                         zeroline=False),
@@ -1005,7 +1010,13 @@ if choice == 'Pricing via Machine Learning' :
                 fig.update_layout(title = "<b>Comparaison du pricing avec l'existant</b>", title_x = 0.5, showlegend = False)
                 fig.update_layout({'plot_bgcolor': 'rgba(255,255,255,255)',
                                     'paper_bgcolor': 'rgba(255,255,255,255)', })
+                fig.add_annotation(x=2, y=df_domaine['price 2'].median(), yref="y",text=df_domaine['price 2'].median().round(),showarrow=False, font=dict(color="black", size=14))
+                fig.add_annotation(x=-0.27, y=df_domaine['price'].median(), yref="y",text=df_domaine['price'].median().round(),showarrow=False, font=dict(color="black", size=14))
+                fig.add_annotation(x=3.14, y=box_cepage_france['price'].median(), yref="y",text=box_cepage_france['price'].median().round(),showarrow=False, font=dict(color="black", size=14))
+                fig.add_annotation(x=0.85, y=df_domaine['price 3'].median(), yref="y",text=df_domaine['price 3'].median().round(),showarrow=False, font=dict(color="black", size=14))
+                fig.add_annotation(x=4.3, y=box_cepage['price'].median(), yref="y",text=box_cepage['price'].median().round(),showarrow=False, font=dict(color="black", size=14))
                 st.plotly_chart(fig, use_container_width=True)
+
 
         choix_hypothese = st.selectbox('Sélectionner une hypothèse de pricing',['Hypothèse 1', 'Hypothèse intermédiaire', 'Hypothèse 2'])
 
@@ -1044,4 +1055,3 @@ if choice == 'Pricing via Machine Learning' :
             fig.update_yaxes(title='Vins')
             fig.update_layout(xaxis_tickprefix = '$')
             st.plotly_chart(fig, use_container_width=True) 
-        
