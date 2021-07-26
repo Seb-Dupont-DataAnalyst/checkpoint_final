@@ -178,7 +178,7 @@ if choice == 'Analyse du marché':
                        'paper_bgcolor': 'rgba(255,255,255,255)', })
 
     fig.add_annotation(x=1.2, y=df['price'].median(), yref="y2",text=df['price'].median(),showarrow=False, font=dict(color="black", size=14))
-    fig.add_annotation(x=0, y=df['points'].median(), yref="y",text=df['points'].median(),showarrow=False, font=dict(color="black", size=14))
+    fig.add_annotation(x=-0.1, y=df['points'].median(), yref="y",text=df['points'].median(),showarrow=False, font=dict(color="black", size=14))
               
     st.plotly_chart(fig, use_container_width=True)
 
