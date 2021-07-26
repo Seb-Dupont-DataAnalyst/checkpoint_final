@@ -176,10 +176,9 @@ if choice == 'Analyse du marché':
         title='<b>Répartition des notes et des prix</b>', title_x=0.5, showlegend=False)
     fig.update_layout({'plot_bgcolor': 'rgba(255,255,255,255)',
                        'paper_bgcolor': 'rgba(255,255,255,255)', })
-    fig.update_layout(
-    annotations(yref="y2",dict(text=df['price'].median(), x=1.3, y2=df['price'].median(), font_size=14, showarrow=False, font=dict(color="black", size=12))))
-    fig.update_layout(
-    annotations(yref="y",dict(text=df['points'].median(), x=0, y=df['points'].median(), font_size=14, showarrow=False, font=dict(color="black", size=12))))
+
+    fig.add_annotation(x=1.3, y=df['price'].median(), yref="y2",showarrow=False, font=dict(color="black", size=12)))
+    fig.add_annotation(x=0.1, y=df['points'].median(), yref="y",showarrow=False, font=dict(color="black", size=12)))
               
     st.plotly_chart(fig, use_container_width=True)
 
