@@ -176,6 +176,9 @@ if choice == 'Analyse du marché':
         title='<b>Répartition des notes et des prix</b>', title_x=0.5, showlegend=False)
     fig.update_layout({'plot_bgcolor': 'rgba(255,255,255,255)',
                        'paper_bgcolor': 'rgba(255,255,255,255)', })
+    fig.update_layout(
+    annotations=[dict(text='mediane', x=1, y=df['price'].median(), font_size=20, showarrow=False, font=dict(color="black", size=12)),
+              dict(text='mediane', x=0, y=df['points'].median(), font_size=20, showarrow=False, font=dict(color="black", size=12))])
     st.plotly_chart(fig, use_container_width=True)
 
     fig = px.bar(df.groupby(['country']).count()[['title']].reset_index().sort_values(
