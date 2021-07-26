@@ -622,6 +622,10 @@ if choice == 'Zoom':
             bgcolor='#4ac8a4',
             opacity=0.8
             )
+        fig.add_annotation(x=2.1, y=df_province['price'].median(), yref="y2",text=df_province['price'].median(),showarrow=False, font=dict(color="white", size=14))
+        fig.add_annotation(x=-0.25, y=df_province['points'].median(), yref="y",text=df_province['points'].median(),showarrow=False, font=dict(color="white", size=14))
+        fig.add_annotation(x=3.27, y=df_hors_province['price'].median(), yref="y2",text=df_hors_province['price'].median(),showarrow=False, font=dict(color="white", size=14))
+        fig.add_annotation(x=0.92, y=df_hors_province['points'].median(), yref="y",text=df_hors_province['points'].median(),showarrow=False, font=dict(color="white", size=14))
         fig.update_layout(title='<b>Comparaison : ' + choix_province + ' vs autres</b>',
                             title_x=0.5, title_font_family="Verdana")
         st.plotly_chart(fig, use_container_width=True)
