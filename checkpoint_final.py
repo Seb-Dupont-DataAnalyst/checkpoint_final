@@ -727,11 +727,23 @@ if choice == 'Descriptions' :
     ('tannins', 1068),
     ('texture', 956)]
 
+    Top_croix = [('wine', 23),
+    ('fruits', 12),
+    ('tannins', 7),
+    ('great', 6),
+    ('well', 6),
+    ('ripe', 6),
+    ('years', 6),
+    ('structure', 6),
+    ('red', 6),
+    ('drink', 6)]
+
     df_Top  = pd.DataFrame(Top)
     df_Top_pinot  = pd.DataFrame(Top_pinot)
     df_Top_burgundy  = pd.DataFrame(Top_burgundy)
+    df_Top_croix  = pd.DataFrame(Top_croix)
 
-    fig = make_subplots(rows=1, cols=3, specs=[[{'type':'domain'}, {'type':'domain'}, {'type':'domain'}]])
+    fig = make_subplots(rows=1, cols=4, specs=[[{'type':'domain'}, {'type':'domain'}, {'type':'domain'}, {'type':'domain'}]])
     fig.add_trace(go.Pie(labels=df_Top_burgundy[0], values=df_Top_burgundy[1], name="Burgundy", hole=0.5, marker_colors=px.colors.qualitative.Plotly),
                 1, 3)
         
@@ -739,14 +751,17 @@ if choice == 'Descriptions' :
                 1, 2)
     fig.add_trace(go.Pie(labels=df_Top[0], values=df_Top[1], name="Global", hole=0.5, marker_colors=px.colors.qualitative.Plotly),
                 1, 1)
+    fig.add_trace(go.Pie(labels=df_Top_croix[0], values=df_Top_croix[1], name="Domaine des Croix", hole=0.5, marker_colors=px.colors.qualitative.Plotly),
+                1, 4)                
     fig.update_layout(title='<b>Mots les plus utilisés dans les descriptions</b>',
                         title_x=0.5, title_font_family="Verdana", title_font_color = 'black',showlegend=False)
     fig.update_layout({'plot_bgcolor': 'rgba(0,0,0,0)','paper_bgcolor': 'rgba(0,0,0,0)'})
     fig.update_traces(texttemplate = "%{label} <br>%{percent:%f}")
     fig.update_layout(
-    annotations=[dict(text='Global', x=0.125, y=0.5, font_size=20, showarrow=False, font=dict(color="black", size=12)),
-             dict(text='Pinot Noir', x=0.5, y=0.5, font_size=20, showarrow=False, font=dict(color="black", size=12)),
-              dict(text='Burgundy', x=0.89, y=0.5, font_size=20, showarrow=False, font=dict(color="black", size=12))])
+    annotations=[dict(text='Global', x=0.08, y=0.5, font_size=20, showarrow=False, font=dict(color="black", size=12)),
+             dict(text='Pinot Noir', x=0.37, y=0.5, font_size=20, showarrow=False, font=dict(color="black", size=12)),
+              dict(text='Burgundy', x=0.635, y=0.5, font_size=20, showarrow=False, font=dict(color="black", size=12)),
+              dict(text='Domaine Croix', x=0.95, y=0.5, font_size=20, showarrow=False, font=dict(color="black", size=12))])
 
     st.plotly_chart(fig, use_container_width=True)
 
@@ -754,7 +769,7 @@ if choice == 'Descriptions' :
 
     st.subheader('')
 
-    st.image("https://github.com/Seb-Dupont-DataAnalyst/checkpoint_final/blob/main/graph_NLP_2.JPG?raw=true", width = 1300)
+    st.image("https://github.com/Seb-Dupont-DataAnalyst/checkpoint_final/blob/main/graph_NLP_3.JPG?raw=true", width = 1300)
 
     st.header('')
 
