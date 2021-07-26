@@ -377,7 +377,7 @@ if choice == 'Zoom':
         fig3.update_layout(width=800, height=500)
         fig3.update_traces(textposition='inside')
         fig3.update_traces(texttemplate="%{label} <br>%{percent:%f}")
-        fig3.update_layout(title='<b>Répartition des vins par pays</b>',
+        fig3.update_layout(title='<b>Répartition du ' + choix_cepage + ' vins par pays</b>',
                        title_x=0.5, title_font_family="Verdana", showlegend=False)
 
         st.plotly_chart(fig3, use_container_width=True)
