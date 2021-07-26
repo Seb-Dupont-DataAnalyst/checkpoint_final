@@ -891,21 +891,21 @@ if choice == 'Pricing via Machine Learning' :
 
             trace1 = go.Box(
             y=df_domaine['price'],
-            name='Domaine des Croix 1',
+            name='Pricing 1',
             marker=dict(
                 color='burlywood'
             )
             )
             trace2 = go.Box(
                 y=df_domaine['price 3'],
-                name='Domaine des Croix 2',
+                name='Pricing Intermédiaire',
                 marker=dict(
                     color='brown'
                 ))
 
             trace3 = go.Box(
                 y=df_domaine['price 2'],
-                name='Domaine des Croix 3',
+                name='Pricing 2',
                 marker=dict(
                     color='tomato'
                 )
