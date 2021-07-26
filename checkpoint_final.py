@@ -257,10 +257,10 @@ if choice == 'Analyse du marché':
     df_variety.columns = ['variety', 'mean', 'count']
 
     fig = go.Figure(data=[
-        go.Bar(name='Notes moyennes', x=df_variety.sort_values(by='mean', ascending=False).head(10)['variety'], y=df_variety.sort_values(by='mean', ascending=False).head(10)['mean'], yaxis='y',
+        go.Bar(name='Notes', x=df_variety.sort_values(by='mean', ascending=False).head(10)['variety'], y=df_variety.sort_values(by='mean', ascending=False).head(10)['mean'], yaxis='y',
                offsetgroup=1, text=df_variety.sort_values(by='mean', ascending=False).head(10)['mean'],
                marker={'color': ['lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue', 'lightblue']}),
-        go.Bar(name='Nombre de vins',  x=df_variety.sort_values(by='mean', ascending=False).head(10)['variety'], y=df_variety.sort_values(by='mean', ascending=False).head(10)['count'], yaxis='y2',
+        go.Bar(name='Nombre',  x=df_variety.sort_values(by='mean', ascending=False).head(10)['variety'], y=df_variety.sort_values(by='mean', ascending=False).head(10)['count'], yaxis='y2',
                offsetgroup=2, text=df_variety.sort_values(by='mean', ascending=False).head(10)['count'],
                marker={'color': ['yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow', 'yellow']})
     ],
