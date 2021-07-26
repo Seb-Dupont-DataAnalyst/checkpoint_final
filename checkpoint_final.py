@@ -177,8 +177,8 @@ if choice == 'Analyse du marché':
     fig.update_layout({'plot_bgcolor': 'rgba(255,255,255,255)',
                        'paper_bgcolor': 'rgba(255,255,255,255)', })
 
-    fig.add_annotation(x=1.3, y=df['price'].median(), yref="y2",showarrow=False, font=dict(color="black", size=12)))
-    fig.add_annotation(x=0.1, y=df['points'].median(), yref="y",showarrow=False, font=dict(color="black", size=12)))
+    fig.add_annotation(x=1.3, y=df['price'].median(), yref="y2",showarrow=False, font=dict(color="black", size=12))
+    fig.add_annotation(x=0.1, y=df['points'].median(), yref="y",showarrow=False, font=dict(color="black", size=12))
               
     st.plotly_chart(fig, use_container_width=True)
 
