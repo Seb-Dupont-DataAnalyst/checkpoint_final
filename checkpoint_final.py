@@ -150,7 +150,7 @@ if choice == 'Analyse du marché':
     )
     trace2 = go.Box(
         y=df['price'],
-        name='prices',
+        name='prix',
         marker=dict(
             color='#FF851B'
         ),
