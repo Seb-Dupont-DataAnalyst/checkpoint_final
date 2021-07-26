@@ -178,7 +178,8 @@ if choice == 'Analyse du marché':
                        'paper_bgcolor': 'rgba(255,255,255,255)', })
     fig.update_layout(
     annotations=[dict(text=df['price'].median(), x=1.3, y2=df['price'].median(), font_size=14, showarrow=False, font=dict(color="black", size=12))])
-    fig.update_layout(dict(text=df['points'].median(), x=0, y=df['points'].median(), font_size=14, showarrow=False, font=dict(color="black", size=12))])
+    fig.update_layout(
+    annotations=[dict(text=df['points'].median(), x=0, y=df['points'].median(), font_size=14, showarrow=False, font=dict(color="black", size=12))])
               
     st.plotly_chart(fig, use_container_width=True)
 
