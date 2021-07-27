@@ -65,8 +65,8 @@ st.markdown('<style>' + open('style.css').read() +
 st.markdown('<body class="title">🍇 Domaine des Croix 🍷</body>',
             unsafe_allow_html=True)
 
-st.sidebar.image("https://lapassionduvin.com/attachment/38309", use_column_width=True)
-st.header('')
+#st.sidebar.image("https://lapassionduvin.com/attachment/38309", use_column_width=True)
+#st.header('')
 
 st.sidebar.title("Bienvenue :wine_glass: :grapes:")
 
