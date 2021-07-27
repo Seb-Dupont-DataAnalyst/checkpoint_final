@@ -65,6 +65,9 @@ st.markdown('<style>' + open('style.css').read() +
 st.markdown('<body class="title">🍇 Domaine des Croix 🍷</body>',
             unsafe_allow_html=True)
 
+st.sidebar.image("https://lapassionduvin.com/attachment/38309", ,use_column_width=True)
+st.header('')
+
 st.sidebar.title("Bienvenue :wine_glass: :grapes:")
 
 
@@ -1079,4 +1082,4 @@ st.sidebar.image("https://img.etimg.com/thumb/msid-71922711,width-1200,height-90
 st.sidebar.title('')
 st.sidebar.info('Ckeckpoint n°4 - Formation Data Analyst @ Wild Code School - 26/07/2021')
 st.sidebar.title('')
-st.sidebar.image("https://www.wildcodeschool.com/static/imgs/logo.png")
+st.sidebar.image("https://www.wildcodeschool.com/static/imgs/logo.png",use_column_width=True)
