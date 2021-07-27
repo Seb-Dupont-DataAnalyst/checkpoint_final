@@ -1076,4 +1076,5 @@ if choice == 'Pricing via Machine Learning' :
 
 st.sidebar.title('')            
 st.sidebar.image("https://img.etimg.com/thumb/msid-71922711,width-1200,height-900/magazines/panache/space-aged-wines-for-connoisseurs-12-bordeaux-bottles-to-remain-corked-in-orbit-for-a-year.jpg",use_column_width=True) 
-
+st.sidebar.title('')
+st.sidebar.info('Hackathon organized by the **WildCodeSchool** in partnership with *Fiverr*, on 06/30/2021')
