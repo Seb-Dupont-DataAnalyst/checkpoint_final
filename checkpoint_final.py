@@ -1077,9 +1077,9 @@ if choice == 'Pricing via Machine Learning' :
             fig.update_layout(xaxis_tickprefix = '$')
             st.plotly_chart(fig, use_container_width=True) 
 
-st.sidebar.subheader('')            
+st.sidebar.write('')            
 st.sidebar.image("https://img.etimg.com/thumb/msid-71922711,width-1200,height-900/magazines/panache/space-aged-wines-for-connoisseurs-12-bordeaux-bottles-to-remain-corked-in-orbit-for-a-year.jpg",use_column_width=True) 
-st.sidebar.subheader('')
+st.sidebar.write('')
 st.sidebar.info('Ckeckpoint n°4 - Formation Data Analyst @ Wild Code School - 26/07/2021')
-st.sidebar.subheader('')
+st.sidebar.write('')
 st.sidebar.image("https://www.wildcodeschool.com/static/imgs/logo.png",use_column_width=True)
