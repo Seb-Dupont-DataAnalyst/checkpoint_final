@@ -67,7 +67,7 @@ st.markdown('<body class="title">🍇 Domaine des Croix 🍷</body>',
 
 st.sidebar.title("Bienvenue :wine_glass: :grapes:")
 
-st.sidebar.image("https://www.washingtonpost.com/resizer/NWEo6n4qzYCNVkTqwHqoOqbueeY=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IL6AYWGV4MI6PGWZZIDBT3P2AU.jpg", use_column_width=True)
+
 
 
 
@@ -1073,3 +1073,5 @@ if choice == 'Pricing via Machine Learning' :
             fig.update_yaxes(title='Vins')
             fig.update_layout(xaxis_tickprefix = '$')
             st.plotly_chart(fig, use_container_width=True) 
+            
+st.sidebar.image("https://www.washingtonpost.com/resizer/NWEo6n4qzYCNVkTqwHqoOqbueeY=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IL6AYWGV4MI6PGWZZIDBT3P2AU.jpg", use_column_width=True)
