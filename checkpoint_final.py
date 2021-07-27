@@ -1077,7 +1077,7 @@ if choice == 'Pricing via Machine Learning' :
             fig.update_layout(xaxis_tickprefix = '$')
             st.plotly_chart(fig, use_container_width=True) 
             
-st.sidebar.title('')
+st.sidebar.subheader('')
 st.sidebar.title('')            
 st.sidebar.image("https://img.etimg.com/thumb/msid-71922711,width-1200,height-900/magazines/panache/space-aged-wines-for-connoisseurs-12-bordeaux-bottles-to-remain-corked-in-orbit-for-a-year.jpg") 
 st.sidebar.title('')
