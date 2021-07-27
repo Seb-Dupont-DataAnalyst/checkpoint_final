@@ -67,7 +67,7 @@ st.markdown('<body class="title">🍇 Domaine des Croix 🍷</body>',
 
 st.sidebar.title("Bienvenue :wine_glass: :grapes:")
 
-st.sidebar.image("https://img.etimg.com/thumb/msid-71922711,width-1200,height-900/magazines/panache/space-aged-wines-for-connoisseurs-12-bordeaux-bottles-to-remain-corked-in-orbit-for-a-year.jpg",use_column_width=True) 
+
 
 
 
@@ -1075,6 +1075,5 @@ if choice == 'Pricing via Machine Learning' :
             st.plotly_chart(fig, use_container_width=True) 
 
 st.sidebar.title('')            
-st.sidebar.image("https://www.washingtonpost.com/resizer/NWEo6n4qzYCNVkTqwHqoOqbueeY=/1484x0/arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/IL6AYWGV4MI6PGWZZIDBT3P2AU.jpg", use_column_width=True)
-st.sidebar.header('') 
+st.sidebar.image("https://img.etimg.com/thumb/msid-71922711,width-1200,height-900/magazines/panache/space-aged-wines-for-connoisseurs-12-bordeaux-bottles-to-remain-corked-in-orbit-for-a-year.jpg",use_column_width=True) 
 
